@@ -4,9 +4,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.string :password
-      t.string :type
+      t.string :role
       t.text :bio
-      t.boolean :post_anonymously
       t.string :website
       t.string :twitter
 

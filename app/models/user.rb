@@ -1,13 +1,7 @@
 class User < ActiveRecord::Base
-  attr_accessible :bio, :email, :name, :password, :post_anonymously, :twitter, :type, :website
+  attr_accessible :bio, :email, :name, :password, :post_anonymously, :twitter, :role, :website
   
-  has_many :comments
-end
-
-class Author < User
+  ROLES = %w[author reader anon_reader]
   has_many :posts
-end
-
-class RegUser < User
-
+  has_many :comments
 end
