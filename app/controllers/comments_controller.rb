@@ -1,16 +1,23 @@
 class CommentsController < ApplicationController
-  def index
-  end
+  before_filter :find_post
 
-  def show
+  def index
   end
 
   def new
   end
 
-  def edit
+  def create
+	@comment = current_user.comments.build(:comment)
+	@comment.post = @post
+	if @comment.save
+		redirect_to @post
+	else
+		render :edit
+	end
   end
-
-  def delete
+  
+  def find_post
+    @post = Post.find(params[:post_id])
   end
 end

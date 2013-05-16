@@ -1,2 +1,11 @@
-<h1>Post#show</h1>
-<p>Find me in app/views/post/show.html.erb</p>
+<h1><%= @post.title %></h1>
+<p><i>by <%= @post.user.name %></i><p>
+
+<p><%= @post.content %></p>
+
+<p>Last updated: <%= @post.updated_at %>
+
+<p>===</p>
+<p><%= link_to 'Edit', edit_post_path %> this post</p>
+<p>===</p>
+<%= link_to "<- Back to All Posts", posts_path %>
