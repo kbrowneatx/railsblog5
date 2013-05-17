@@ -8,17 +8,18 @@
 <p>===</p>
 <h2>Comments</h2>
 
-<form action="" id="placeholder">
+<h4>Comment on this post</h4>
+<%= form_for @newcomment do |c| %>
 	<p>
-	<label for="comment">Comment on this post</label><br/>
-	<textarea name="comment" form="placeholder">Enter comment here...</textarea>
+		<%= c.label :content %><br/>
+		<%= c.text_area :content, :size => "60x4" %>
 	</p>
-	<input type="submit">
-</form>
+		<p>
+		<%= p.submit "Create" %>
+<% end %>
 
-<p>---</p>
+<p>===</p>
 
-<h3>What others have to say...</h3>
 <% @comments.each do |comment| %>
     <h4><%= comment.user.name %></h4>
     <p><%= comment.content %></p>
