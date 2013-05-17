@@ -2,9 +2,11 @@ class CommentsController < ApplicationController
   before_filter :find_post
 
   def index
+	@comments = @post.comments.all
   end
 
   def new
+	@comment = @post.comments.new
   end
 
   def create

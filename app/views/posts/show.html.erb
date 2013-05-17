@@ -6,6 +6,29 @@
 <p>Last updated: <%= @post.updated_at %>
 
 <p>===</p>
+<h2>Comments</h2>
+
+<h4>Comment on this post</h4>
+<%= form_for @newcomment do |c| %>
+	<p>
+		<%= c.label :comment.user.name %><br/>
+		<%= c.text_field :comment.user.name %>
+	</p>
+	<p>
+		<%= c.label :content %><br/>
+		<%= c.text_area :content, :size => "60x4" %>
+	</p>
+		<p>
+		<%= p.submit "Create" %>
+<% end %>
+
+<p>===</p>
+
+<% @comments.each do |comment| %>
+    <h4><%= comment.user.name %></h4>
+    <p><%= comment.content %></p>
+<% end %>
+<p>===</p>
 <p><%= link_to 'Edit', edit_post_path %> this post</p>
 <p>===</p>
 <%= link_to "<- Back to All Posts", posts_path %>
