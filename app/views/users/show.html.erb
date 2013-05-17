@@ -1,2 +1,17 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<h1>User Data</h1>
+<p>&nbsp;</p>
+<p>Name: &emsp; <%= @user.name %></p>
+<p>Email: &emsp; <%= @user.email %></p>
+<p>Twitter: &emsp; <%= @user.twitter %></p>
+<p>Website: &emsp; <%= @user.website %></p>
+<p>Bio: &emsp; <%= @user.bio %></p>
+<p>Role: &emsp; <%= @user.role %></p>
+
+<h2>Posts by <%= @user.name %></h2>
+
+<% @user.posts.each do |post| %>
+    <p><%= link_to post.title, post_path(post) %></p>
+<% end %>
+
+<p>===</p>
+<%= link_to "<- Back to All Users", users_path %>
