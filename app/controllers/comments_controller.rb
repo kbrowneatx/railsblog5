@@ -2,11 +2,11 @@ class CommentsController < ApplicationController
   before_filter :find_post
 
   def index
-	@comments = @post.comments.all
+	@user = User.find(params[:user_id])
+	@comments = @user.comments
   end
 
   def new
-	@comment = @post.comments.new
   end
 
   def create

@@ -1,0 +1,9 @@
+<%= form_for @newcomment do |nc| %>
+	<p>
+		<%= nc.label :content %><br/>
+		<%= nc.text_area :content, :size => "60x4" %>
+	</p>
+	<p>
+		<%= p.submit "Create" %>
+	</p>
+<% end %>
