@@ -1,17 +1,17 @@
 class CommentsController < ApplicationController
-  before_filter :find_post
 
   def index
 	@user = User.find(params[:user_id])
-	@comments = @user.comments
+	@comments = @user.comments.delete_if{|x| x.user_id.nil?}
   end
 
   def new
   end
 
   def create
-	@comment = current_user.comments.build(:comment)
-	@comment.post = @post
+    @post = Post.find(params[:post_id])
+	@comment = @post.comments.build(params[:comment])
+	@comment.user_id = 3
 	if @comment.save
 		redirect_to @post
 	else
