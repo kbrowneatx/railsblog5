@@ -1,0 +1,90 @@
+body {
+  width: 960px;
+  background-color: $bg-color;
+  @include text-font;
+  margin: 0 auto;
+}
+header{
+	border-bottom: 5px solid lighten($bg-color, 20%);
+	h1{
+	  text-align: center;
+	  color: $link-color;
+	}
+}
+nav {
+  display: block;
+  height: 40px;
+  ul{
+	list-style: none;
+	  li{
+		display: block;
+		float: left;
+		margin: 0 70px 15px 0;
+		padding-left: 5px;
+		border-left: 1px dotted $link-color;
+	  }
+	}
+}
+h1 { 
+  @include title-font;
+  font-size: 40px; 
+  margin: 30px 0 5px;
+}
+h2 { 
+  @include title-font;
+  font-size: 28px; 
+}
+h3 { 
+  @include title-font;
+  font-size: 20px; 
+  margin: 30px 0 0 0;
+}
+
+h4 {
+  @include title-font;
+  font-size: 16px;
+  margin: 5px 0 0;
+}
+  
+p {
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 19px;
+}
+a {
+  color: $link-color;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    color: lighten(black, 10%);
+	background-color: $link-color;
+  }
+}
+hr {
+  width: 400px;
+  margin-top: 50px;
+  border: 1px dashed $link-color;
+}
+input[type='text'], textarea {
+  border: 1px solid darken(white, 40%);
+  padding: 2px 0;
+  text-indent: 4px;
+  color: $bg-color;
+  font-size: 14px;
+
+  &:focus {
+    border: 1px solid $link-color;
+    outline: none;
+  }
+}
+
+input[type='submit'] {
+  border: 1px solid darken($bg-color, 50%);
+  color: $text-light;
+  background-color: lighten($bg-color, 20%);
+}
+
+form {
+  display: inline-block;
+}
