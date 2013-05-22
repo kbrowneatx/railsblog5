@@ -6,24 +6,20 @@
     <th>Email</th>
     <th>Twitter</th>
     <th>Role</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Options</th>
   </tr>
 
 <% @users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
+  <tr class="<%= cycle('even','odd') %>">
+    <td><%= link_to user.name, user %></td>
     <td><%= user.email %></td>
     <td><%= user.twitter %></td>
     <td><%= user.role %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_user_path(user), { :class => 'bluelink' } %> | <%= link_to 'Destroy', user, { :class => 'bluelink' }, method: :delete, data: { confirm: 'Are you sure?'} %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<p><%= link_to 'New User', new_user_path, { :class => 'orangelink' } %></p>

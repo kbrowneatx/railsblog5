@@ -1,11 +1,11 @@
-<h1>User Data</h1>
+<h1>User Info</h1>
 <p>&nbsp;</p>
-<p>Name: &emsp; <%= @user.name %></p>
-<p>Email: &emsp; <%= @user.email %></p>
-<p>Twitter: &emsp; <%= @user.twitter %></p>
-<p>Website: &emsp; <%= @user.website %></p>
-<p>Bio: &emsp; <%= @user.bio %></p>
-<p>Role: &emsp; <%= @user.role %></p>
+<p>Name: &emsp; <span class='displayer'><%= @user.name %></span></p>
+<p>Email: &emsp; <span class='displayer'><%= @user.email %></span></p>
+<p>Twitter: &emsp; <span class='displayer'><%= @user.twitter %></span></p>
+<p>Website: &emsp; <span class='displayer'><%= @user.website %></span></p>
+<p>Bio: &emsp; <span class='displayer'><%= @user.bio %></span></p>
+<p>Role: &emsp; <span class='displayer'><%= @user.role %></span></p>
 
 <h2>Posts by <%= @user.name %></h2>
 
@@ -13,5 +13,7 @@
     <p><%= link_to post.title, post_path(post) %></p>
 <% end %>
 
-<p>===</p>
-<%= link_to "<- Back to All Users", users_path %>
+<hr />
+<p><%= link_to 'Edit user info', edit_user_path(@user), { :class => 'orangelink' } %></p>
+<p><%= link_to "<- Back to All Users", users_path, { :class => 'orangelink' } %></p>
+<p></p>

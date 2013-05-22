@@ -1,2 +1,4 @@
 @mixin text-font { font-family: 'Droid Sans', sans-serif; color: $text-color;}
 @mixin title-font { font-family: 'Droid Serif', serif; color: $title-color;}
+@mixin menu-li { display: block; float: left; margin: 0 70px 15px 0; padding-left: 5px; }
+@mixin cmd-link($fsize, $fweight, $fcolor, $fbcolor){  text-decoration: none; font-size: $fsize; font-weight: $fweight; color: $fcolor; background-color: $fbcolor; }

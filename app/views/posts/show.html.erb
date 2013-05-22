@@ -5,7 +5,7 @@
 
 <p>Last updated: <%= @post.updated_at %>
 
-<p>===</p>
+<hr />
 <h2>Comments</h2>
 
 <h4>Comment on this post</h4>
@@ -19,13 +19,13 @@
 	</p>
 <% end %>
 
-<p>===</p>
+<hr />
 
 <% @comments.each do |comment| %>
     <h4><%= link_to comment.user.name, user_comments_path(comment.user) %></h4>
     <p><%= comment.content %></p>
 <% end %>
-<p>===</p>
-<p><%= link_to 'Edit', edit_post_path %> this post</p>
-<p>===</p>
-<%= link_to "<- Back to All Posts", posts_path %>
+<hr />
+<p><%= link_to 'Edit this post', edit_post_path, { :class => 'orangelink' } %></p>
+<p></p>
+<p><%= link_to "<- Back to All Posts", posts_path, { :class => 'orangelink' } %></p>

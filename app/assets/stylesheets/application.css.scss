@@ -11,9 +11,6 @@
  *= require_self
  */
 
-// @import "bourbon";
-// @import "normalize";
-
 @import url("http://fonts.googleapis.com/css?family=Droid+Sans");
 @import url("http://fonts.googleapis.com/css?family=Droid+Serif");
 
@@ -24,8 +21,8 @@ $text-light: darken(white, 11%);
 $title-color: $text-color;
 $bg-color: lighten(black, 10%);
 $link-color: #ff9900;
-$bg-secondary-color: darken($bg-color, 20%);
+$blue-link: #6699ff;
+$bg-secondary-color: lighten($bg-color, 25%);
  
 @import "mixins";
 @import "base";
-// @import "layout";

@@ -1,19 +1,14 @@
 <h1>All Posts</h1>
 
 <% @posts.each do |post| %>
-    <h3><%= link_to post.title, post %></h3>
-    <p><%= post.content %></p>
-
-<table>
-  <tr>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-</table>
+    <div class='postblock'>
+		<h3>|<%= link_to post.title, post %>|</h3>
+		<p><%= post.content %></p>
+		<p><%= link_to 'Edit', edit_post_path(post), { :class => 'bluelink' } %> &emsp; | &emsp;
+		  <%= link_to 'Destroy', post, { :class => 'bluelink' }, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	</div>
 <% end %>
 
-<br />
 
-<hr>
-<%= link_to 'New Post', new_post_path %>
+<hr />
+<%= link_to 'New Post', new_post_path, { :class => 'orangelink' } %>

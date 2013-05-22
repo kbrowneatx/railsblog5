@@ -17,10 +17,7 @@ nav {
   ul{
 	list-style: none;
 	  li{
-		display: block;
-		float: left;
-		margin: 0 70px 15px 0;
-		padding-left: 5px;
+		@include menu-li;
 		border-left: 1px dotted $link-color;
 	  }
 	}
@@ -33,11 +30,12 @@ h1 {
 h2 { 
   @include title-font;
   font-size: 28px; 
+  margin: 20px 0 5px 0;
 }
 h3 { 
   @include title-font;
   font-size: 20px; 
-  margin: 30px 0 0 0;
+  margin: 40px 0 0 0;
 }
 
 h4 {
@@ -51,14 +49,44 @@ p {
   font-size: 13px;
   line-height: 19px;
 }
-a {
-  color: $link-color;
-  font-weight: bold;
+.postblock{
+  border: 1px solid lighten($bg-color, 10%);
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.displayer{
+  width: 100px;
+  border: 1px dotted $text-color;
+  background: $bg-secondary-color;
+  padding: 0 5px 0 5px;
+}
+table{
+  width: 900px;
+  border: 1px solid $text-light;
+  border-collapse:collapse;
+}
+tr.even{
+  background-color: lighten($bg-color, 15%);
+}
+tr.odd{
+  background-color: lighten($bg-color, 25%);
+}
+td{
+  border: 1px solid $text-light;
+  padding-left: 3px;
+}
+a { 
+  color: $text-color;
   text-decoration: none;
-
-  &:hover {
-    color: lighten(black, 10%);
-	background-color: $link-color;
+  &:visited { color: $text-color;
+  }
+}
+a.orangelink { @include cmd-link(14px, bold, $link-color, $bg-color);
+  &:hover { @include cmd-link(14px, bold, lighten(black, 10%), $link-color);
+  }
+}
+a.bluelink { @include cmd-link(12px, normal, $blue-link, $bg-color);
+  &:hover { @include cmd-link(12px, normal, lighten(black, 10%), $blue-link);
   }
 }
 hr {
